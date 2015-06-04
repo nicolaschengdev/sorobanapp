@@ -4,6 +4,21 @@
 	<title>EDF - Sorobanapp</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="robots" content = "index, follow, noodp" />
+	<meta name="googlebot" content="index, follow, noodp" />
+
+	<meta name="description" content="Une application mobile d'EDF pour les PME vous permettant d'indiquer votre consommation réelle et d'éviter toute surprise sur vos factures." />
+
+	<meta name="keywords" content="edf, pro, entreprises, pme, facture, consommation, estimé, réel, estimée, réelle, électricité" />
+	<meta name="author" content="whyers">
+	<meta name="revisit-after" content="period" />
+	<meta name="google" content="notranslate" />
+
+	<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+
+
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -15,6 +30,9 @@
 </head>
 
 <body>
+
+	<?php include_once("analyticstracking.php") ?>
+
 	<!-- Header -->
 	<section id="header" class="dark">
 		<header>
@@ -48,23 +66,26 @@
 		<header>
 			<div class="container">
 				<div class="row">
-					<div class="8u 12u(narrow)">
+					<div class="7u 12u(narrow)">
 						<section>
 							<h2>
-								Payez le montant<br/>
-								de votre consommation réelle
+								Le paiement de votre consommation réelle
 							</h2>
 							<p>
-								Vous êtes un professionnel et vous avez réalisé des <span class="highlight">travaux</span> récemment pour étendre votre local ou votre commerce ?<br/>
-								Vous avez installé de <span class="highlight">nouveaux équipements</span> ? Soyez vigilant, ces changements pourront impacter votre consommation d'électricité.<br/>
+								Vous êtes un professionnel...<br/>
 								<br/>
-								Pour éviter toute surprise et rester zen, l’application Soroban vous permet de régler votre <span class="highlight">consommation réelle</span> à chaque facture et de mieux <span class="highlight">anticiper</span> vos dépenses.
+								Et vous venez de vous installer ?<br/>
+								Ou vous avez réalisé des <span class="highlight">travaux</span> récemment pour étendre votre local ou votre commerce ?<br/>
+								Ou vous avez installé de <span class="highlight">nouveaux équipements</span> ?<br/>
+								<br/>
+								Soyez vigilant, votre consommation d'électricité peut être plus élevée que celle prévue.<br/>
+								Pour éviter toute surprise et rester zen, l’application Soroban vous permet d'indiquer votre <span class="highlight">consommation réelle</span> aux moments opportuns et mieux <span class="highlight">anticiper</span> vos dépenses.
 							</p>
 						</section>
 					</div>
-					<div class="4u 12u(narrow)">
-						<section>
-							<img class="iphone" src="images/screen.png" alt="" />
+					<div class="5u 12u(narrow)">
+						<section class="iphone">
+							<img src="images/screen.png" alt="" />
 						</section>
 					</div>
 				</div>
@@ -184,7 +205,7 @@
 						<img class="feature" src="images/feature_01.png" alt="" />
 
 						<h3>
-							Vous avez une question ?
+							Vous avez<br/>une question ?
 						</h3>
 						<p>
 							Demandez à un conseiller de vous rappeler.
@@ -194,7 +215,7 @@
 					<div class="4u 12u(narrow)">
 						<img class="feature" src="images/feature_02.png" alt="" />
 
-						<h3>Connaître la couleur des jours EJP</h3>
+						<h3>Connaître la couleur<br/>des jours EJP</h3>
 						<p>
 							ou Tempo si vous avez souscrit à l'une de ces options.
 						</p>
@@ -203,7 +224,7 @@
 					<div class="4u 12u(narrow)">
 						<img class="feature" src="images/feature_03.png" alt="" />
 
-						<h3>Téléchargez vos factures</h3>
+						<h3>Téléchargez<br/>vos factures</h3>
 						<p>
 							mensuelles ou annuelle<br/>
 							(facture regroupée)
@@ -214,7 +235,6 @@
 			</div>
 		</div>
 	</section>
-
 
 	<!-- Five -->
 	<section id="six" class="main">
@@ -232,7 +252,6 @@
 				<a class="contact" href="#">NOUS CONTACTER</a>
 			</div>
 		</header>
-
 
 
 	</section>
@@ -256,6 +275,24 @@
 	<!--[if lt IE 8]>
 	<script src="ie7/ie7.js"></script>
 	<![endif]-->
+
+	<script type="text/javascript">
+		function supports_input_placeholder() {
+			var i = document.createElement('input');
+			return 'placeholder' in i;
+		}
+
+		if (!supports_input_placeholder()) {
+			var fields = document.getElementsByTagName('INPUT');
+			for (var i=0; i < fields.length; i++) {
+				if (fields[i].hasAttribute('placeholder')) {
+					fields[i].defaultValue = fields[i].getAttribute('placeholder');
+					fields[i].onfocus = function() { if(this.value == this.defaultValue) this.value = ''; }
+					fields[i].onblur = function() { if(this.value == '') this.value = this.defaultValue; }
+				}
+			}
+		}
+	</script>
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

@@ -1968,7 +1968,7 @@ button.alt:hover,
 }
 
 .main > header p {
-	margin: 2em 0 0 0;
+	margin: 2em 0;
 	padding: 0;
 	font-family: "Roboto";
 	font-weight: 100;
@@ -2172,8 +2172,15 @@ button.alt:hover,
 	margin: 1em auto;
 }
 
-.iphone {
+section.iphone {
+	position: relative;
+}
+
+section.iphone img {
 	display: block;
+	margin: 0 auto;
+	position: absolute;
+	top: -40px;
 }
 
 /* Footer */
@@ -2229,7 +2236,7 @@ button.alt:hover,
 	/* Header */
 
 	#header {
-		padding: 12em 0 12em 0;
+		padding: 6em 0;
 	}
 
 	/* Main Sections */
@@ -2239,7 +2246,7 @@ button.alt:hover,
 	}
 
 	.main > .content {
-		padding: 4em 0 4em 0;
+		padding: 0 0;
 	}
 }
 
@@ -2281,8 +2288,8 @@ button.alt:hover,
 	/* Header */
 
 	#header {
-		margin: 0 !important;
-		padding: 8em 2em 8em 2em;
+		margin: 0;
+		padding: 6em 0;
 	}
 
 	#header header p {
@@ -2316,7 +2323,7 @@ button.alt:hover,
 	}
 
 	.main > .content {
-		padding: 3.5em 20px 3.5em 20px;
+		padding: 0em 20px;
 	}
 
 	.main > .content > .container > :last-child {
@@ -2387,7 +2394,7 @@ button.alt:hover,
 	/* Header */
 
 	#header {
-		padding: 6em 20px 6em 20px;
+		padding: 6em 0;
 	}
 
 	#header > header {
@@ -2405,7 +2412,7 @@ button.alt:hover,
 	}
 
 	.main > .content {
-		padding: 3em 20px 3em 20px;
+		padding: 0 20px 0 20px;
 	}
 
 	.main > .content h3 {
