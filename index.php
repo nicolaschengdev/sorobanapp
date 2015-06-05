@@ -1,21 +1,21 @@
 <?
 
-$DBhost = "10.240.38.216";
+$DBhost = "127.0.0.1:3306";
 $DBuser = "root";
-$DBpass = "";
+$DBpass = "qzpt(VSXa}1X1X";
 $DBName = "sorobanapp";
-$table = "srb_subscriber";
-
+if ( !empty($_POST) ) {
+$email = isset($_POST['email']) ? $_POST['email'] : null;
+if (is_null($email)==false) {
 mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
-
 @mysql_select_db("$DBName") or die("Unable to select database $DBName");
-
-$sqlquery = "INSERT INTO $table(email) VALUES('test@gmail.com')";
-
+mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
+@mysql_select_db("$DBName") or die("Unable to select database $DBName");
+$sqlquery = "INSERT INTO `srb_subscriber`(`email`) VALUES ('$email')";
 $results = mysql_query($sqlquery);
-
 mysql_close();
-
+}
+}
 ?>
 
 <!DOCTYPE HTML>
