@@ -1,6 +1,6 @@
 @import url("font-awesome.min.css");
 
-@import url("http://fonts.googleapis.com/css?family=Quicksand:400|Roboto+Slab:300,100,400|Roboto:300,400");
+@import url("http://fonts.googleapis.com/css?family=Quicksand:400|Roboto+Slab:300,100,400|Roboto:100,300,400");
 
 @font-face {
 	font-family: 'iconos';
@@ -1737,6 +1737,57 @@ form :-ms-input-placeholder {
 	color: #555 !important;
 }
 
+
+.dark form input[type="text"],
+.dark form input[type="email"],
+.dark form input[type="password"],
+.dark form select,
+.dark form .select,
+.dark form textarea {
+	background: none;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	color: #fff;
+}
+
+.dark form input[type="text"]:focus,
+.dark form input[type="email"]:focus,
+.dark form input[type="password"]:focus,
+.dark form select:focus,
+.dark form .select:focus,
+.dark form textarea:focus {
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: inset 0 0 0 1px #fff;
+}
+
+.dark form .select:before {
+	background: url("images/dark-arrow.svg") center center no-repeat;
+	background-size: contain;
+}
+
+.dark form .formerize-placeholder {
+	color: #aaa !important;
+	color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark form ::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark form :-moz-placeholder {
+	color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark form ::-moz-placeholder {
+	color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark form :-ms-input-placeholder {
+	color: rgba(255, 255, 255, 0.85) !important;
+}
+
+
+
+
 /* Table */
 
 table {
@@ -1771,7 +1822,6 @@ table.default tfoot td {
 
 /* Button */
 
-a.contact,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -1785,8 +1835,8 @@ button,
 	position: relative;
 	display: inline-block;
 	background: #96cf95;
-	padding: 0.85em 1em 0.85em 1em;
-	border-radius: 0;
+	padding: 0.85em 1.25em 0.85em 1.25em;
+	border-radius: 0.25em;
 	cursor: pointer;
 	border: 0;
 	color: #fff;
@@ -1798,7 +1848,6 @@ button,
 	text-transform: uppercase;
 }
 
-a.contact:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
@@ -1807,7 +1856,6 @@ button:hover,
 	background: #6b916a;
 }
 
-a.contact.alt,
 input[type="button"].alt,
 input[type="submit"].alt,
 input[type="reset"].alt,
@@ -1818,7 +1866,6 @@ button.alt,
 	background: none;
 }
 
-a.contact.alt:hover,
 input[type="button"].alt:hover,
 input[type="submit"].alt:hover,
 input[type="reset"].alt:hover,
@@ -1826,6 +1873,42 @@ button.alt:hover,
 .button.alt:hover {
 	background: rgba(0, 0, 0, 0.025);
 }
+
+	.dark input[type="button"],
+	.dark input[type="submit"],
+	.dark input[type="reset"],
+	.dark button,
+	.dark .button {
+		background: rgba(255, 255, 255, 0.15);
+		box-shadow: inset 0 0 0 1px #fff;
+		color: #fff;
+	}
+
+		.dark input[type="button"]:hover,
+		.dark input[type="submit"]:hover,
+		.dark input[type="reset"]:hover,
+		.dark button:hover,
+		.dark .button:hover {
+			background: rgba(255, 255, 255, 0.25);
+		}
+
+		.dark input[type="button"].alt,
+		.dark input[type="submit"].alt,
+		.dark input[type="reset"].alt,
+		.dark button.alt,
+		.dark .button.alt {
+			background: none;
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+		}
+
+			.dark input[type="button"].alt:hover,
+			.dark input[type="submit"].alt:hover,
+			.dark input[type="reset"].alt:hover,
+			.dark button.alt:hover,
+			.dark .button.alt:hover {
+				background: rgba(255, 255, 255, 0.15);
+				box-shadow: inset 0 0 0 1px #fff;
+			}
 
 /* Feature Icon */
 
@@ -1913,7 +1996,6 @@ button.alt:hover,
 	line-height: 1.25em;
 	font-family: "Roboto Slab";
 	font-weight: 300;
-	margin-bottom: 2em;
 	color: #fff;
 }
 
@@ -1961,7 +2043,7 @@ button.alt:hover,
 .main > header h2 {
 	font-family: "Roboto Slab";
 	font-weight: 300;
-	font-size: 2.5em;
+	font-size: 2.2em;
 	line-height: 1.2;
 	margin-bottom: 0;
 	text-align: center;
@@ -2063,12 +2145,13 @@ button.alt:hover,
 	text-align: left;
 }
 
-#first.main > header p .highlight {
+.highlight {
 	font-weight: 400;
 }
 
-
-
+#six .highlight {
+	font-weight: 700;
+}
 
 #second.main > header h2 {
 	color: #305e6a;
@@ -2110,7 +2193,7 @@ button.alt:hover,
 #third.main > .content p,
 #five.main > .content p {
 	font-family: "Roboto";
-	font-size: 16pt;
+	font-size: 100%;
 	text-align: center;
 }
 
@@ -2168,19 +2251,74 @@ button.alt:hover,
 
 #six.main > header hr {
 	border-top: solid 1px #fff;
-	width: 50px;
-	margin: 1em auto;
+	width: 120px;
+	margin: 2em auto;
 }
 
-section.iphone {
-	position: relative;
-}
-
-section.iphone img {
-	display: block;
-	margin: 0 auto;
+div.iphone {
 	position: absolute;
-	top: -40px;
+	left: 50%;
+	margin: -40px 0 0 -162.5px;
+	width: 325px;
+	height: 640px;
+	background: transparent url(../../images/iphone-mockup.png) no-repeat left top;
+}
+
+div.iphone:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: transparent url(../../images/iphone-glass-reflect.png) no-repeat left top;
+}
+
+div.iphone div.screenshots {
+	position: absolute;
+	width: 247px;
+	height: 432px;
+	top: 92px;
+	left: 39px;
+	overflow: hidden;
+}
+
+div.iphone ul {
+	position: relative;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.iphone ul li {
+	position: absolute;
+	width: 247px;
+	height: 432px;
+	margin: 0;
+	padding: 0;
+}
+
+div.iphone ul li {
+	opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+div.iphone ul li.screenshot-0 {
+	opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+div.iphone ul li.screenshot-0 {
+	background-color: #ff0000;
+}
+
+div.iphone ul li.screenshot-1 {
+	background-color: #00ff00;
+}
+
+div.iphone ul li.screenshot-2 {
+	background-color: #0000ff;
 }
 
 /* Footer */
@@ -2315,7 +2453,7 @@ section.iphone img {
 	}
 
 	.main > header br {
-		display: none;
+		/*display: none;*/
 	}
 
 	.main > header p {
@@ -2339,8 +2477,10 @@ section.iphone img {
 		margin: 0 auto;
 	}
 
-	.iphone {
+	div.iphone {
+		position: relative;
 		margin: 0 auto;
+		left: 0;
 	}
 }
 
@@ -2408,7 +2548,7 @@ section.iphone img {
 	}
 
 	.main > header h2 {
-		font-size: 1.5em;
+		font-size: 1.85em;
 	}
 
 	.main > .content {
@@ -2427,10 +2567,219 @@ section.iphone img {
 	#fourth.main .conseiller {
 		margin: 0 auto;
 	}
+
+	#third.main > .content h3,
+	#five.main > .content h3 {
+		font-size: 1.15em;
+	}
+
+	#third.main > .content p,
+	#five.main > .content p {
+		font-size: 1.1em;
+	}
 }
 
 @media screen and (max-width: 320px) {
 	.iphone {
 		display: none;
 	}
+}
+
+/* MODAL */
+
+.modalbg {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(27, 29, 42, 0);
+	color: #fff;
+	z-index: 99999;
+	-moz-transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	display: block;
+	pointer-events: none;
+}
+
+.modalbg .dialog {
+	box-sizing: border-box;
+	width: 560px;
+	height: 620px;
+	position: absolute;
+	left: 50%;
+	top: -310px;
+	margin:  -310px 0 0 -280px;
+	padding: 30px 40px;
+	background: #96cf95;
+}
+
+.modalbg .dialog .ie7 {
+  /*filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=135, Strength=3);*/
+}
+
+.modalbg:target {
+	display: block;
+	pointer-events: auto;
+	background: rgba(27, 29, 42, 0.5);
+	-moz-transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+.modalbg:target .dialog {
+	top: 50%;
+	-moz-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	-webkit-transition-delay: 0.1s;
+	-moz-transition-delay: 0.1s;
+	-o-transition-delay: 0.1s;
+	-transition-delay: 0.1s;
+}
+
+.close {
+	font-family: sans-serif, "Roboto";
+	font-weight: 300 !important;
+	font-size: 20px;
+	line-height: 34px;
+	color: #FFFFFF;
+	background: transparent !important;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: normal;
+	-moz-transition: all 0.25s ease-out;
+	-webkit-transition: all 0.25s ease-out;
+	-o-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+	-webkit-transition-delay: 0.1s;
+	-moz-transition-delay: 0.1s;
+	-o-transition-delay: 0.1s;
+	-transition-delay: 0.1s;
+}
+
+.close .ie7 {
+  /*filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=135, Strength=3);*/
+}
+
+.close:hover {
+	background: #209690 !important;
+	-moz-transition: all 0.25s ease-out;
+	-webkit-transition: all 0.25s ease-out;
+	-o-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+}
+
+.dialog h1 {
+	font-family: sans-serif, "Roboto";
+	font-weight: 100;
+	font-size: 50px;
+	line-height: 1.25;
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+.dialog span.freshee {
+	background: transparent url(../img/logo_freshee_big_span.png) no-repeat center top;
+	width: 172px;
+	height: 80px;
+	margin-bottom: -25px;
+	text-indent: 172px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.dialog p {
+	font-family: sans-serif, "Roboto";
+	font-weight: 300;
+	font-size: 18px;
+	text-align: center;
+}
+
+.dialog form {
+	margin: 30px 0 0 0;
+	text-align: center;
+}
+
+.dialog form input[type=email] {
+	display: inline-block;
+	border: 0;
+	height: 39px;
+	padding: 0 26px 0 20px;
+	width: 260px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	outline: 0;
+	color: #444;
+	font-size: 16px;
+}
+
+.dialog form input[type=submit] {
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #66CAC7;
+	background: #66CAC7;
+	height: 40px;
+	padding: 0 14px 0 10px;
+	text-align: center;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	outline: 0;
+	font-family: sans-serif, "Roboto";
+	font-weight: 300;
+	color: #fff;
+	line-height: 40px;
+}
+
+.dialog form input[type=submit]:hover {
+	border: 1px solid #209690;
+	background: #209690;
+}
+
+.dialog .message {
+	text-align: center;
+	font-family: sans-serif, "Roboto";
+	font-weight: 300;
+	font-size: 18px;
+	display: none;
+	margin: 12px 0 0 0;
+}
+
+.dialog .message span {
+	padding: 14px 26px;
+	border-radius: 4px;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.dialog .message.info,
+.dialog .message.error {
+	display: block;
+}
+
+.dialog .message.info span {
+	color: #fff;
+	background: #34495e;
+}
+
+.dialog .message.error span {
+	color: #fff;
+	background: #e74c3c;
+}
+
+
+
+#signup-form input[type=email] {
+	width: 50%;
+	margin: 0 auto 1em;
 }

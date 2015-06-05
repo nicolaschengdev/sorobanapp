@@ -1,3 +1,23 @@
+<?
+
+$DBhost = "10.240.38.216";
+$DBuser = "root";
+$DBpass = "qzpt(VSXa}1X1X";
+$DBName = "sorobanapp";
+$table = "srb_subscriber";
+
+mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
+
+@mysql_select_db("$DBName") or die("Unable to select database $DBName");
+
+$sqlquery = "INSERT INTO $table(email) VALUES('test@gmail.com')";
+
+$results = mysql_query($sqlquery);
+
+mysql_close();
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -84,8 +104,18 @@
 						</section>
 					</div>
 					<div class="5u 12u(narrow)">
-						<section class="iphone">
-							<img src="images/screen.png" alt="" />
+						<sectio style="position:relative;">
+							<div class="iphone">
+								<div class="screenshots">
+									<ul>
+										<li class="screenshot-0">Screenshot 0</li>
+										<li class="screenshot-1">Screenshot 1</li>
+										<li class="screenshot-2">Screenshot 2</li>
+									</ul>
+								</div>
+							</div>	
+							<!--img src="images/iphone-mockup.png" alt="" /-->
+							<!--img src="images/iphone-glass-reflect.png" alt="" /-->
 						</section>
 					</div>
 				</div>
@@ -240,16 +270,26 @@
 	<section id="six" class="main">
 		<header>
 			<div class="container">
-				<h2>Contactez-nous</h2>
+				<h2>Êtes-vous intéressé ?</h2>
 				<p>
-					L’application sera prochainement disponible.<br/>
-					Et bien entendu, elle sera gratuite !
+					L'application Soroban sera <span class="highlight">bientôt</span> disponible.<br/>
+					<span class="highlight">Inscrivez-vous</span> pour être prévenu de sa date de lancement.
 				</p>
+
+					<form id="signup-form" method="post" action="/">
+						<input type="email" name="email" id="email" placeholder="Votre adresse e-mail">
+						<input class="button" type="submit" value="Souscrire">
+						<span class="message"></span>
+					</form>
+				
 				<hr>
-				<p class="more">
-					Pour plus d’information, n’hésitez pas à nous contacter.
+
+				<p>
+					Votre avis est important,<br/><span class="highlight">participez</span> à l'élobaration du produit en répondant à quelques questions :
 				</p>
-				<a class="contact" href="#">NOUS CONTACTER</a>
+				<div class="dark">
+					<a class="button" href="#subscribe">Fomulaire</a>
+				</div>
 			</div>
 		</header>
 
@@ -270,13 +310,26 @@
 		</div>
 	</section>
 
+	<!--div id="subscribe" class="modalbg">
+		<div class="dialog">
+			<a href="#close" title="Close" class="close">X</a>
+			<h1>Le kit <span class="freshee">freshee</span> sera disponible mi 2015.</h1>
+
+			<form id="emailForm" action="/" method="post">
+				<input type="hidden" name="debug" value="">
+				<input type="email" name="email" value="" placeholder="Entrez votre adresse email">
+				<input id="submit_button" type="submit" value="OK">
+			</form>
+		</div>
+	</div-->
+
 	<!-- Scripts -->
 
 	<!--[if lt IE 8]>
 	<script src="ie7/ie7.js"></script>
 	<![endif]-->
 
-	<script type="text/javascript">
+	<!--script type="text/javascript">
 		function supports_input_placeholder() {
 			var i = document.createElement('input');
 			return 'placeholder' in i;
@@ -292,7 +345,7 @@
 				}
 			}
 		}
-	</script>
+	</script-->
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

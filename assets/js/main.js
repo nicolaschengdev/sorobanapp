@@ -16,33 +16,76 @@
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body');
+			$body = $('body'),
+			interval = 5000,
+			index = 0,
+			loop = undefined;
 
 		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+		$body.addClass('is-loading');
 
-			$window.on('load', function() {
-				$body.removeClass('is-loading');
-			});
+		$window.on('load', function() {
+			$body.removeClass('is-loading');
+		});
 
 		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+		$('form').placeholder();
 
 		// CSS polyfills (IE<9).
-			if (skel.vars.IEVersion < 9)
-				$(':last-child').addClass('last-child');
+		if (skel.vars.IEVersion < 9)
+			$(':last-child').addClass('last-child');
 
 		// Scrolly links.
-			$('.scrolly').scrolly();
+		$('.scrolly').scrolly();
 
 		// Prioritize "important" elements on narrow.
-			skel.on('+narrow -narrow', function() {
-				$.prioritize(
-					'.important\\28 narrow\\29',
-					skel.breakpoint('narrow').active
-				);
-			});
+		skel.on('+narrow -narrow', function() {
+			$.prioritize(
+				'.important\\28 narrow\\29',
+				skel.breakpoint('narrow').active
+			);
+		});
 
+		// Carousel
+		loop = setInterval(
+			function(){ 
+				var oldIndex = index;
+
+				index++;
+				if (index >= 3) {
+					index = 0;
+				}
+
+				var item = $('.screenshot-' + index);
+				item.prependTo(item.parent()).css({ opacity:1 });
+
+				item = $('.screenshot-' + oldIndex);
+				item.fadeTo(1000, 0);
+			}, 
+			interval
+		);
+
+		// email
+
+		$('.btn_precommand').on('click', function(e) {
+			_gaq.push(['_trackEvent', 'Precommand', 'See', label]);
+		});
+
+
+
+		$('#emailForm').submit(function( event ) {
+			var email = $('#emailForm input[type=email]').val();
+			var isEmail = validator.isEmail(email);
+
+			if (isEmail) {
+				_gaq.push(['_trackEvent', 'Precommand', 'Subscribe', label]);
+			} else {
+				event.preventDefault();
+			}
+		});
+
+
+		// typeform
 	});
 
 })(jQuery);
