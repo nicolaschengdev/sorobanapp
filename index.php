@@ -2,7 +2,7 @@
 
 $DBhost = "10.240.38.216";
 $DBuser = "root";
-$DBpass = "qzpt(VSXa}1X1X";
+$DBpass = "";
 $DBName = "sorobanapp";
 $table = "srb_subscriber";
 
