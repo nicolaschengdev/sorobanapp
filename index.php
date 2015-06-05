@@ -1,36 +1,39 @@
-<?
+<?php
 
-$DBhost = "127.0.0.1:3306";
+$DBhost = "127.0.0.1";
 $DBuser = "root";
 $DBpass = "qzpt(VSXa}1X1X";
-$DBName = "sorobanapp";
+$DBname = "sorobanapp";
 
 $email = "";
 $error_message = "";
 $email_was_posted = false;
 
 if (!empty($_POST)) {
-	
-	$email = isset($_POST['email']) ? $_POST['email'] : null;
+        $email = isset($_POST['email']) ? $_POST['email'] : null;
 
-	if (is_null($email) == false) {
+        if (is_null($email) == false) {
 
-		if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-    		$error_message = "Votre adresse email n'est pas considérée comme valide.";
-		} else {
+            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+                   $error_message = "Votre adresse email n'est pas considérée comme valide.";
+            } else {
 
-			$email = mysqli_real_escape_string($email);
+                $link = mysqli_connect($DBhost, $DBuser, $DBpass, $DBname);
 
-			mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
-			@mysql_select_db("$DBName") or die("Unable to select database $DBName");
-			mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
+                /* Vérification de la connexion */
+                if (mysqli_connect_errno()) {
+                        printf("Échec de la connexion : %s\n", mysqli_connect_error());
+                        exit();
+                }
 
-			@mysql_select_db("$DBName") or die("Unable to select database $DBName");
-			$sqlquery = "INSERT INTO `srb_subscriber`(`email`) VALUES ('$email')";
-			$results = mysql_query($sqlquery);
-			mysql_close();
+                $email = mysqli_real_escape_string($link, $email);
 
-			$email_was_posted = true;
+                $query = "INSERT INTO `srb_subscriber`(`email`) VALUES ('$email')";
+                $result = mysqli_query($link, $query);
+                mysqli_close($link);
+
+                $email_was_posted = true;
+            }
 		}
 	} else {
 		$email = "";
