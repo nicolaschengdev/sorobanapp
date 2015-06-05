@@ -2310,15 +2310,11 @@ div.iphone ul li.screenshot-0 {
 }
 
 div.iphone ul li.screenshot-0 {
-	background-color: #ff0000;
+	background: transparent url(../../images/screenshot_1.png) no-repeat left top;
 }
 
 div.iphone ul li.screenshot-1 {
-	background-color: #00ff00;
-}
-
-div.iphone ul li.screenshot-2 {
-	background-color: #0000ff;
+	background: transparent url(../../images/screenshot_2.png) no-repeat left top;
 }
 
 /* Footer */
@@ -2577,6 +2573,10 @@ div.iphone ul li.screenshot-2 {
 	#five.main > .content p {
 		font-size: 1.1em;
 	}
+
+	#signup-form input[type=email] {
+		width: 85%;
+	}
 }
 
 @media screen and (max-width: 320px) {
@@ -2584,200 +2584,6 @@ div.iphone ul li.screenshot-2 {
 		display: none;
 	}
 }
-
-/* MODAL */
-
-.modalbg {
-	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(27, 29, 42, 0);
-	color: #fff;
-	z-index: 99999;
-	-moz-transition: all 0.5s ease-out;
-	-webkit-transition: all 0.5s ease-out;
-	-o-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-	display: block;
-	pointer-events: none;
-}
-
-.modalbg .dialog {
-	box-sizing: border-box;
-	width: 560px;
-	height: 620px;
-	position: absolute;
-	left: 50%;
-	top: -310px;
-	margin:  -310px 0 0 -280px;
-	padding: 30px 40px;
-	background: #96cf95;
-}
-
-.modalbg .dialog .ie7 {
-  /*filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=135, Strength=3);*/
-}
-
-.modalbg:target {
-	display: block;
-	pointer-events: auto;
-	background: rgba(27, 29, 42, 0.5);
-	-moz-transition: all 0.5s ease-out;
-	-webkit-transition: all 0.5s ease-out;
-	-o-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-}
-
-.modalbg:target .dialog {
-	top: 50%;
-	-moz-transition: all 0.3s ease-out;
-	-webkit-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-	-webkit-transition-delay: 0.1s;
-	-moz-transition-delay: 0.1s;
-	-o-transition-delay: 0.1s;
-	-transition-delay: 0.1s;
-}
-
-.close {
-	font-family: sans-serif, "Roboto";
-	font-weight: 300 !important;
-	font-size: 20px;
-	line-height: 34px;
-	color: #FFFFFF;
-	background: transparent !important;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	text-decoration: none;
-	font-weight: normal;
-	-moz-transition: all 0.25s ease-out;
-	-webkit-transition: all 0.25s ease-out;
-	-o-transition: all 0.25s ease-out;
-	transition: all 0.25s ease-out;
-	-webkit-transition-delay: 0.1s;
-	-moz-transition-delay: 0.1s;
-	-o-transition-delay: 0.1s;
-	-transition-delay: 0.1s;
-}
-
-.close .ie7 {
-  /*filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=135, Strength=3);*/
-}
-
-.close:hover {
-	background: #209690 !important;
-	-moz-transition: all 0.25s ease-out;
-	-webkit-transition: all 0.25s ease-out;
-	-o-transition: all 0.25s ease-out;
-	transition: all 0.25s ease-out;
-}
-
-.dialog h1 {
-	font-family: sans-serif, "Roboto";
-	font-weight: 100;
-	font-size: 50px;
-	line-height: 1.25;
-	margin: 0 0 20px;
-	text-align: center;
-}
-
-.dialog span.freshee {
-	background: transparent url(../img/logo_freshee_big_span.png) no-repeat center top;
-	width: 172px;
-	height: 80px;
-	margin-bottom: -25px;
-	text-indent: 172px;
-	overflow: hidden;
-	display: inline-block;
-}
-
-.dialog p {
-	font-family: sans-serif, "Roboto";
-	font-weight: 300;
-	font-size: 18px;
-	text-align: center;
-}
-
-.dialog form {
-	margin: 30px 0 0 0;
-	text-align: center;
-}
-
-.dialog form input[type=email] {
-	display: inline-block;
-	border: 0;
-	height: 39px;
-	padding: 0 26px 0 20px;
-	width: 260px;
-	border-top-left-radius: 20px;
-	border-bottom-left-radius: 20px;
-	outline: 0;
-	color: #444;
-	font-size: 16px;
-}
-
-.dialog form input[type=submit] {
-	display: inline-block;
-	vertical-align: middle;
-	border: 1px solid #66CAC7;
-	background: #66CAC7;
-	height: 40px;
-	padding: 0 14px 0 10px;
-	text-align: center;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
-	outline: 0;
-	font-family: sans-serif, "Roboto";
-	font-weight: 300;
-	color: #fff;
-	line-height: 40px;
-}
-
-.dialog form input[type=submit]:hover {
-	border: 1px solid #209690;
-	background: #209690;
-}
-
-.dialog .message {
-	text-align: center;
-	font-family: sans-serif, "Roboto";
-	font-weight: 300;
-	font-size: 18px;
-	display: none;
-	margin: 12px 0 0 0;
-}
-
-.dialog .message span {
-	padding: 14px 26px;
-	border-radius: 4px;
-	display: inline-block;
-	margin: 0 auto;
-}
-
-.dialog .message.info,
-.dialog .message.error {
-	display: block;
-}
-
-.dialog .message.info span {
-	color: #fff;
-	background: #34495e;
-}
-
-.dialog .message.error span {
-	color: #fff;
-	background: #e74c3c;
-}
-
-
 
 #signup-form input[type=email] {
 	width: 50%;

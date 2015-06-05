@@ -52,7 +52,7 @@
 				var oldIndex = index;
 
 				index++;
-				if (index >= 3) {
+				if (index >= 2) {
 					index = 0;
 				}
 
@@ -67,12 +67,13 @@
 
 		// email
 
+		/*
 		$('.btn_precommand').on('click', function(e) {
 			_gaq.push(['_trackEvent', 'Precommand', 'See', label]);
 		});
+		*/
 
-
-
+		/*
 		$('#emailForm').submit(function( event ) {
 			var email = $('#emailForm input[type=email]').val();
 			var isEmail = validator.isEmail(email);
@@ -83,6 +84,15 @@
 				event.preventDefault();
 			}
 		});
+		*/
+
+		if (window.sorobanapp.email_was_posted == true) {
+			if (window.sorobanapp.error_message.length > 0) {
+				swal("Oups...", window.sorobanapp.error_message, "error");
+			} else {
+				swal("Merci!", "Votre addresse email a été enregistré avec succès.", "success")
+			}
+		}
 
 
 		// typeform

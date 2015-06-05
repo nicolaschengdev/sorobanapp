@@ -4,18 +4,39 @@ $DBhost = "127.0.0.1:3306";
 $DBuser = "root";
 $DBpass = "qzpt(VSXa}1X1X";
 $DBName = "sorobanapp";
-if ( !empty($_POST) ) {
-$email = isset($_POST['email']) ? $_POST['email'] : null;
-if (is_null($email)==false) {
-mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
-@mysql_select_db("$DBName") or die("Unable to select database $DBName");
-mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
-@mysql_select_db("$DBName") or die("Unable to select database $DBName");
-$sqlquery = "INSERT INTO `srb_subscriber`(`email`) VALUES ('$email')";
-$results = mysql_query($sqlquery);
-mysql_close();
+
+$email = "";
+$error_message = "";
+$email_was_posted = false;
+
+if (!empty($_POST)) {
+	
+	$email = isset($_POST['email']) ? $_POST['email'] : null;
+
+	if (is_null($email) == false) {
+
+		if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+    		$error_message = "Votre adresse email n'est pas considérée comme valide.";
+		} else {
+
+			$email = mysqli_real_escape_string($email);
+
+			mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
+			@mysql_select_db("$DBName") or die("Unable to select database $DBName");
+			mysql_connect($DBhost,$DBuser,$DBpass) or die("Unable to connect to database");
+
+			@mysql_select_db("$DBName") or die("Unable to select database $DBName");
+			$sqlquery = "INSERT INTO `srb_subscriber`(`email`) VALUES ('$email')";
+			$results = mysql_query($sqlquery);
+			mysql_close();
+
+			$email_was_posted = true;
+		}
+	} else {
+		$email = "";
+	}
 }
-}
+
 ?>
 
 <!DOCTYPE HTML>
@@ -47,6 +68,10 @@ mysql_close();
 	<!--[if lt IE 8]>
 	<link rel="stylesheet" href="ie7/ie7.css">
 	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="assets/js/sweetalert/sweetalert.css">
+	<script src="assets/js/sweetalert/sweetalert.min.js"></script>
+
 </head>
 
 <body>
@@ -108,9 +133,8 @@ mysql_close();
 							<div class="iphone">
 								<div class="screenshots">
 									<ul>
-										<li class="screenshot-0">Screenshot 0</li>
-										<li class="screenshot-1">Screenshot 1</li>
-										<li class="screenshot-2">Screenshot 2</li>
+										<li class="screenshot-0"></li>
+										<li class="screenshot-1"></li>
 									</ul>
 								</div>
 							</div>	
@@ -277,7 +301,7 @@ mysql_close();
 				</p>
 
 					<form id="signup-form" method="post" action="/">
-						<input type="email" name="email" id="email" placeholder="Votre adresse e-mail">
+						<input type="email" name="email" id="email" placeholder="Votre adresse email" value="<? echo $email; ?>">
 						<input class="button" type="submit" value="Souscrire">
 						<span class="message"></span>
 					</form>
@@ -310,42 +334,11 @@ mysql_close();
 		</div>
 	</section>
 
-	<!--div id="subscribe" class="modalbg">
-		<div class="dialog">
-			<a href="#close" title="Close" class="close">X</a>
-			<h1>Le kit <span class="freshee">freshee</span> sera disponible mi 2015.</h1>
-
-			<form id="emailForm" action="/" method="post">
-				<input type="hidden" name="debug" value="">
-				<input type="email" name="email" value="" placeholder="Entrez votre adresse email">
-				<input id="submit_button" type="submit" value="OK">
-			</form>
-		</div>
-	</div-->
-
 	<!-- Scripts -->
 
 	<!--[if lt IE 8]>
 	<script src="ie7/ie7.js"></script>
 	<![endif]-->
-
-	<!--script type="text/javascript">
-		function supports_input_placeholder() {
-			var i = document.createElement('input');
-			return 'placeholder' in i;
-		}
-
-		if (!supports_input_placeholder()) {
-			var fields = document.getElementsByTagName('INPUT');
-			for (var i=0; i < fields.length; i++) {
-				if (fields[i].hasAttribute('placeholder')) {
-					fields[i].defaultValue = fields[i].getAttribute('placeholder');
-					fields[i].onfocus = function() { if(this.value == this.defaultValue) this.value = ''; }
-					fields[i].onblur = function() { if(this.value == '') this.value = this.defaultValue; }
-				}
-			}
-		}
-	</script-->
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -358,6 +351,12 @@ mysql_close();
 	document.createElement( "picture" );
 	</script>
 	<script src="assets/js/picturefill.min.js" async></script>
+
+	<script type="text/javascript">
+		window.sorobanapp = <?php echo json_encode(
+			array("email" => $email, "error_message" => $error_message, "email_was_posted" => $email_was_posted)
+		); ?>;
+	</script>
 
 	<script src="assets/js/main.js"></script>
 
