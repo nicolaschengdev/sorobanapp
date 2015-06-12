@@ -9,6 +9,7 @@ $email = "";
 $error_message = "";
 $email_was_posted = false;
 
+
 if (!empty($_POST)) {
         $email = isset($_POST['email']) ? $_POST['email'] : null;
 
@@ -20,7 +21,6 @@ if (!empty($_POST)) {
 
                 $link = mysqli_connect($DBhost, $DBuser, $DBpass, $DBname);
 
-                /* Vérification de la connexion */
                 if (mysqli_connect_errno()) {
                         printf("Échec de la connexion : %s\n", mysqli_connect_error());
                         exit();
@@ -97,6 +97,13 @@ if (!empty($_POST)) {
 			<p> 
 				Application gratuite, prochainement disponible ! 
 			</p>
+
+			<form id="signup-form" method="post" action="/">
+				<input type="email" name="email" id="email" placeholder="Votre adresse email" value="<? echo $email; ?>">
+				<input class="button" type="submit" value="Souscrire">
+				<span class="message"></span>
+			</form>
+
 		</header>
 
 		<footer>
@@ -237,8 +244,7 @@ if (!empty($_POST)) {
 					</div>
 					<div class="6u 12u(narrow)">
 						<p class="blockquote">
-							Grâce à un relevé réguliier de la consommation réelle, 75% des litiges sont évités...
-							<!--<cite>Philippe D.</cite>-->
+							Grâce à la consommation réelle, 98% des clients sont satisfaits de leur facture.
 						</p>
 					</div>
 				</div>
@@ -258,33 +264,42 @@ if (!empty($_POST)) {
 			<div class="container">
 				
 				<div class="row">
-					<div class="4u 12u(narrow)">
+					<div class="3u 12u(narrow)">
 						<img class="feature" src="images/feature_01.png" alt="" />
 
 						<h3>
 							Vous avez<br/>une question ?
 						</h3>
 						<p>
-							Demandez à un conseiller de vous rappeler.
+							Demandez à un conseiller de vous rappeler
 						</p>
 					</div>
 
-					<div class="4u 12u(narrow)">
+					<div class="3u 12u(narrow)">
 						<img class="feature" src="images/feature_02.png" alt="" />
 
-						<h3>Connaître la couleur<br/>des jours EJP</h3>
+						<h3>Connaître les horaires<br/>pour faire des économies</h3>
 						<p>
-							ou Tempo si vous avez souscrit à l'une de ces options.
+							Retrouvez facilement les différentes plages horaires HP et HC
 						</p>
 					</div>
 
-					<div class="4u 12u(narrow)">
+					<div class="3u 12u(narrow)">
 						<img class="feature" src="images/feature_03.png" alt="" />
 
 						<h3>Téléchargez<br/>vos factures</h3>
 						<p>
-							mensuelles ou annuelle<br/>
+							Mensuelles ou annuelle<br/>
 							(facture regroupée)
+						</p>
+					</div>
+
+					<div class="3u 12u(narrow)">
+						<img class="feature" src="images/feature_04.png" alt="" />
+
+						<h3>Être notifié<br/>au bon moment</h3>
+						<p>
+							Configurez vos seuils d'alerte et vos rappels
 						</p>
 					</div>
 
