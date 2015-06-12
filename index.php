@@ -2,7 +2,7 @@
 
 $DBhost = "127.0.0.1";
 $DBuser = "root";
-$DBpass = "qzpt(VSXa}1X1X";
+$DBpass = "";
 $DBname = "sorobanapp";
 
 $email = "";
