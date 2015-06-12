@@ -1,5 +1,8 @@
 <?php
 
+// Même chose que error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+
 $DBhost = "127.0.0.1";
 $DBuser = "root";
 $DBpass = "";
@@ -11,33 +14,34 @@ $email_was_posted = false;
 
 
 if (!empty($_POST)) {
-        $email = isset($_POST['email']) ? $_POST['email'] : null;
+	
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
 
-        if (is_null($email) == false) {
+    if (is_null($email) == false) {
 
-            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-                   $error_message = "Votre adresse email n'est pas considérée comme valide.";
-            } else {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+            $error_message = "Votre adresse email n'est pas considérée comme valide.";
+        } else {
+        	
+            $link = mysqli_connect($DBhost, $DBuser, $DBpass, $DBname);
 
-                $link = mysqli_connect($DBhost, $DBuser, $DBpass, $DBname);
-
-                if (mysqli_connect_errno()) {
-                        printf("Échec de la connexion : %s\n", mysqli_connect_error());
-                        exit();
-                }
-
-                $email = mysqli_real_escape_string($link, $email);
-
-                $query = "INSERT INTO `srb_subscriber`(`email`) VALUES ('$email')";
-                $result = mysqli_query($link, $query);
-                mysqli_close($link);
-
-                $email_was_posted = true;
+            if (mysqli_connect_errno()) {
+                    printf("Échec de la connexion : %s\n", mysqli_connect_error());
+                    exit();
             }
-		}
-	} else {
-		$email = "";
+
+            $email = mysqli_real_escape_string($link, $email);
+
+            $query = "INSERT INTO `srb_subscriber`(`email`) VALUES ('$email')";
+            $result = mysqli_query($link, $query);
+            mysqli_close($link);
+
+            $email_was_posted = true;
+            
+        }
 	}
+} else {
+	$email = "";
 }
 
 ?>
