@@ -1,20 +1,16 @@
 <?php
 
-// Même chose que error_reporting(E_ALL);
-ini_set('error_reporting', E_ALL);
-
 $DBhost = "127.0.0.1";
 $DBuser = "root";
-$DBpass = "";
+$DBpass = "qzpt(VSXa}1X1X";
 $DBname = "sorobanapp";
 
 $email = "";
 $error_message = "";
 $email_was_posted = false;
 
-
 if (!empty($_POST)) {
-	
+        
     $email = isset($_POST['email']) ? $_POST['email'] : null;
 
     if (is_null($email) == false) {
@@ -22,12 +18,12 @@ if (!empty($_POST)) {
         if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
             $error_message = "Votre adresse email n'est pas considérée comme valide.";
         } else {
-        	
+                
             $link = mysqli_connect($DBhost, $DBuser, $DBpass, $DBname);
 
             if (mysqli_connect_errno()) {
-                    printf("Échec de la connexion : %s\n", mysqli_connect_error());
-                    exit();
+                printf("Échec de la connexion : %s\n", mysqli_connect_error());
+                exit();
             }
 
             $email = mysqli_real_escape_string($link, $email);
@@ -37,13 +33,11 @@ if (!empty($_POST)) {
             mysqli_close($link);
 
             $email_was_posted = true;
-            
         }
-	}
+    }
 } else {
-	$email = "";
+    $email = "";
 }
-
 ?>
 
 <!DOCTYPE HTML>
@@ -316,30 +310,37 @@ if (!empty($_POST)) {
 	<section id="six" class="main">
 		<header>
 			<div class="container">
-				<h2>Êtes-vous intéressé ?</h2>
-				<p>
-					L'application Soroban sera <span class="highlight">bientôt</span> disponible.<br/>
-					<span class="highlight">Inscrivez-vous</span> pour être prévenu de sa date de lancement.
-				</p>
+                <h2>Êtes-vous intéressé ?</h2>
+                <p>
+                    L'application Soroban sera <span class="highlight">bientôt</span> disponible.<br/>
+                    <span class="highlight">Inscrivez-vous</span> pour être prévenu de sa date de lancement.
+                </p>
+                    <form id="signup-form" method="post" action="/">
+                        <input type="email" name="email" id="email" placeholder="Votre adresse email" value="<? echo $email; ?>">
+                        <input class="button" type="submit" value="Souscrire">
+                        <span class="message"></span>
+                    </form>
+                <hr>
 
-					<form id="signup-form" method="post" action="/">
-						<input type="email" name="email" id="email" placeholder="Votre adresse email" value="<? echo $email; ?>">
-						<input class="button" type="submit" value="Souscrire">
-						<span class="message"></span>
-					</form>
-				
-				<hr>
-
-				<p>
-					Votre avis est important,<br/><span class="highlight">participez</span> à l'élobaration du produit en répondant à quelques questions :
-				</p>
-				<div class="dark">
-					<a class="button" href="#subscribe">Fomulaire</a>
+                <p>
+                    Votre avis est important,<br/><span class="highlight">participez</span> à l'élobaration du produit en répondant à quelques questions :
+                </p>
+                <div class="dark">
+                	<a class="button typeform-share link" href="https://teamwhyers.typeform.com/to/DCmdBe" data-mode="1" target="_blank">Répondre au formulaire</a>
+					<script>
+						(function(){
+						var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
+						if(!gi.call(d,id)){
+						        js=ce.call(d,'script');
+						        js.id=id;js.src=b+'share.js';
+						        q=gt.call(d,'script')[0];
+						        q.parentNode.insertBefore(js,q);
+						}
+						})()
+					</script>
 				</div>
-			</div>
+        	</div>
 		</header>
-
-
 	</section>
 
 	<!-- Footer -->
@@ -347,10 +348,10 @@ if (!empty($_POST)) {
 		<div class="container">
 			<div class="row">
 				<div class="6u 12u(narrow) imprint">
-					<!--a href="#">Mentions légales</a-->
+				<!--a href="#">Mentions légales</a-->
 				</div>
 				<div class="6u 12u(narrow) copyright">
-					2015 &copy; EDF-Soroban.
+				2015 &copy; EDF-Soroban.
 				</div>
 			</div>
 		</div>
@@ -369,8 +370,8 @@ if (!empty($_POST)) {
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 
 	<script>
-	// Picture element HTML5 shiv
-	document.createElement( "picture" );
+		// Picture element HTML5 shiv
+		document.createElement( "picture" );
 	</script>
 	<script src="assets/js/picturefill.min.js" async></script>
 
