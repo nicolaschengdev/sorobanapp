@@ -43,23 +43,23 @@ if (!empty($_POST)) {
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>EDF - Sorobanapp</title>
+	<title>EDF - Ma facture au plus juste</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<meta name="robots" content = "index, follow, noodp" />
 	<meta name="googlebot" content="index, follow, noodp" />
 
-	<meta name="description" content="Une application mobile d'EDF pour les PME vous permettant d'indiquer votre consommation réelle et d'éviter toute surprise sur vos factures." />
+	<meta name="description" content="Une application mobile d'EDF pour les PME vous permettant d'indiquer votre consommation réelle et d'éviter toute surprise sur vos factures d'énergie." />
 
-	<meta name="keywords" content="edf, pro, entreprises, pme, facture, consommation, estimé, réel, estimée, réelle, électricité" />
+	<meta name="keywords" content="edf, pro, entreprises, pme, facture, consommation, estimé, réel, estimée, réelle, électricité, énergie, compteur" />
 	<meta name="author" content="whyers">
 	<meta name="revisit-after" content="period" />
 	<meta name="google" content="notranslate" />
 
-	<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="/images/favicon.ico" sizes="16x16" />
 
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -83,15 +83,18 @@ if (!empty($_POST)) {
 	<section id="header" class="dark">
 		<header>
 			<img class="logo" src="/images/edf-logo.png">
-			<img class="logo sorobanapp" src="/images/sorobanapp-logo.png">
+			<!--img class="logo sorobanapp" src="/images/sorobanapp-logo.png"-->
 
-			<h1>
-				Vos factures d’électricité<br/>
+			<h1>- Ma facture au plus juste -</h1>
+
+			<h2>
+				Vos factures d’énergie<br/>
 				ne seront plus une surprise !
-			</h1>
+			</h2>
 
 			<!--a class="contact" href="#">NOUS CONTACTER</a-->
 
+			<!--
 			<p> 
 				Application gratuite, prochainement disponible ! 
 			</p>
@@ -101,6 +104,7 @@ if (!empty($_POST)) {
 				<input class="button" type="submit" value="Souscrire">
 				<span class="message"></span>
 			</form>
+			-->
 
 		</header>
 
@@ -122,17 +126,17 @@ if (!empty($_POST)) {
 					<div class="7u 12u(narrow)">
 						<section>
 							<h2>
-								Le paiement de votre consommation réelle
+								Payez votre consommation réelle
 							</h2>
 							<p>
 								Vous êtes un professionnel...<br/>
 								<br/>
-								Et vous venez de vous installer ?<br/>
-								Ou vous avez réalisé des <span class="highlight">travaux</span> récemment pour étendre votre local ou votre commerce ?<br/>
-								Ou vous avez installé de <span class="highlight">nouveaux équipements</span> ?<br/>
+								Vous venez de vous installer ?<br/>
+								Vous avez réalisé des <span class="highlight">travaux</span> récemment pour étendre votre local ou votre commerce ?<br/>
+								Vous avez installé de <span class="highlight">nouveaux équipements</span> ?<br/>
 								<br/>
-								Soyez vigilant, votre consommation d'électricité peut être plus élevée que celle prévue.<br/>
-								Pour éviter toute surprise et rester zen, l’application Soroban vous permet d'indiquer votre <span class="highlight">consommation réelle</span> aux moments opportuns et mieux <span class="highlight">anticiper</span> vos dépenses.
+								Soyez vigilant, ces changements peuvent impacter votre consommation d'énergie.<br/>
+								Pour éviter toute surprise et rester zen, l’application <i>- Ma facture au plus juste -</i> vous permet de payer uniquement ce que vous <span class="highlight">consommez</span> et mieux <span class="highlight">anticiper</span> vos dépenses.
 							</p>
 						</section>
 					</div>
@@ -161,7 +165,7 @@ if (!empty($_POST)) {
 	<section id="second" class="main">
 		<header>
 			<div class="container">
-				<h2>Comment çà marche ?</h2>
+				<h2>Comment ça marche ?</h2>
 			</div>
 		</header>
 
@@ -184,7 +188,7 @@ if (!empty($_POST)) {
 	<section id="third" class="main">
 		<header>
 			<div class="container">
-				<h2>L’application Soroban assouplit votre gestion</h2>
+				<h2>L’application assouplit votre gestion</h2>
 			</div>
 		</header>
 
@@ -201,7 +205,7 @@ if (!empty($_POST)) {
 						</h3>
 						<p>
 							Fini les surprises en fin de mois.<br/>
-							Vous relevez vous-même votre compteur d'électricité, ainsi vous êtes assuré de payer le prix juste.
+							Vous relevez vous-même votre compteur, ainsi vous êtes assuré de payer le prix juste.
 						</p>
 					</div>
 
@@ -211,7 +215,7 @@ if (!empty($_POST)) {
 						<h3>Bénéficiez de la lecture simplifiée de votre facture</h3>
 						<p>
 							Vous pouvez comparer vos factures<br/>
-							et ainsi mieux analyser votre consommation d'électricité.
+							et ainsi mieux analyser votre consommation d'énergie.
 						</p>
 					</div>
 
@@ -221,7 +225,7 @@ if (!empty($_POST)) {
 						<h3>Envoyez automatiquement vos factures à votre comptable</h3>
 						<p>
 							Gagnez du temps dans votre gestion.<br/>
-							Vos factures d’électricités générées<br/>
+							Vos factures d’énergies générées<br/>
 							en ligne sont directement transmises<br/>
 							à votre comptable par mail.
 						</p>
@@ -278,7 +282,7 @@ if (!empty($_POST)) {
 
 						<h3>Connaître les horaires<br/>pour faire des économies</h3>
 						<p>
-							Retrouvez facilement les différentes plages horaires HP et HC
+							Retrouvez facilement les différentes plages horaires Heures Pleines et Heures Creuses
 						</p>
 					</div>
 
@@ -287,8 +291,7 @@ if (!empty($_POST)) {
 
 						<h3>Téléchargez<br/>vos factures</h3>
 						<p>
-							Mensuelles ou annuelle<br/>
-							(facture regroupée)
+							Une facture égarée ?<br/>Téléchargez la facture désirée<br/>
 						</p>
 					</div>
 
@@ -297,7 +300,7 @@ if (!empty($_POST)) {
 
 						<h3>Être notifié<br/>au bon moment</h3>
 						<p>
-							Configurez vos seuils d'alerte et vos rappels
+							Configurez la fréquence de vos alertes liées à votre facture
 						</p>
 					</div>
 
@@ -311,22 +314,12 @@ if (!empty($_POST)) {
 		<header>
 			<div class="container">
                 <h2>Êtes-vous intéressé ?</h2>
-                <p>
-                    L'application Soroban sera <span class="highlight">bientôt</span> disponible.<br/>
-                    <span class="highlight">Inscrivez-vous</span> pour être prévenu de sa date de lancement.
-                </p>
-                    <form id="signup-form" method="post" action="/">
-                        <input type="email" name="email" id="email" placeholder="Votre adresse email" value="<? echo $email; ?>">
-                        <input class="button" type="submit" value="Souscrire">
-                        <span class="message"></span>
-                    </form>
-                <hr>
 
                 <p>
                     Votre avis est important,<br/><span class="highlight">participez</span> à l'élobaration du produit en répondant à quelques questions :
                 </p>
                 <div class="dark">
-                	<a class="button typeform-share link" href="https://teamwhyers.typeform.com/to/DCmdBe" data-mode="1" target="_blank">Répondre au formulaire</a>
+                	<a class="button typeform-share link" href="https://teamwhyers.typeform.com/to/DCmdBe" data-mode="1" target="_blank">Donnez votre avis</a>
 					<script>
 						(function(){
 						var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
@@ -339,6 +332,20 @@ if (!empty($_POST)) {
 						})()
 					</script>
 				</div>
+
+				<hr>
+
+				<p>
+                    L'application sera <span class="highlight">bientôt</span> disponible.<br/>
+                    <span class="highlight">Inscrivez-vous</span> pour être prévenu de sa date de lancement.
+                </p>
+                <form id="signup-form" method="post" action="/">
+                    <input type="email" name="email" id="email" placeholder="Votre adresse email" value="<? echo $email; ?>">
+                    <input class="button" type="submit" value="S'inscrire">
+                    <span class="message"></span>
+                </form>
+                
+
         	</div>
 		</header>
 	</section>
@@ -347,12 +354,8 @@ if (!empty($_POST)) {
 	<section id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="6u 12u(narrow) imprint">
-				<!--a href="#">Mentions légales</a-->
-				</div>
-				<div class="6u 12u(narrow) copyright">
-				2015 &copy; EDF-Soroban.
-				</div>
+				<div class="6u 12u(narrow) imprint"></div>
+				<div class="6u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste.</div>
 			</div>
 		</div>
 	</section>
