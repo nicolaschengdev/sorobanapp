@@ -280,9 +280,9 @@ if (!empty($_POST)) {
 					<div class="3u 12u(narrow)">
 						<img class="feature" src="images/feature_02.png" alt="" />
 
-						<h3>Connaître les horaires<br/>pour faire des économies</h3>
+						<h3>Retrouvez les horaires<br/>pour faire des économies</h3>
 						<p>
-							Retrouvez facilement les différentes plages horaires Heures Pleines et Heures Creuses
+							Connaître les différentes plages horaires Heures Pleines et Heures Creuses
 						</p>
 					</div>
 
@@ -298,9 +298,9 @@ if (!empty($_POST)) {
 					<div class="3u 12u(narrow)">
 						<img class="feature" src="images/feature_04.png" alt="" />
 
-						<h3>Être notifié<br/>au bon moment</h3>
+						<h3>Soyez notifié<br/>au bon moment</h3>
 						<p>
-							Configurez la fréquence de vos alertes liées à votre facture
+							Configurez la fréquence des alertes liées à votre facture
 						</p>
 					</div>
 
