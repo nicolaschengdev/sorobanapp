@@ -62,7 +62,7 @@ if (!empty($_POST)) {
 	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/main_2.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
@@ -82,7 +82,7 @@ if (!empty($_POST)) {
 	<!-- Header -->
 	<section id="header" class="dark">
 		<header>
-			<img class="logo" src="/images/edf-logo.png">
+			<img class="logo" src="/images/edf-logo-entreprises.png">
 			<!--img class="logo sorobanapp" src="/images/sorobanapp-logo.png"-->
 
 			<h1>- Ma facture au plus juste -</h1>
@@ -204,7 +204,7 @@ if (!empty($_POST)) {
 							votre consommation réelle
 						</h3>
 						<p>
-							Fini les surprises en fin de mois.<br/>
+							Finis les surprises en fin de mois.<br/>
 							Vous relevez vous-même votre compteur, ainsi vous êtes assuré de payer le prix juste.
 						</p>
 					</div>
@@ -242,11 +242,11 @@ if (!empty($_POST)) {
 			<div class="container">
 				<div class="row">
 					<div class="6u 12u(narrow)">
-						<img class="conseiller" src="images/conseiller.png" alt="" />
+						<img class="conseiller" src="images/conseiller_2.png" alt="" />
 					</div>
 					<div class="6u 12u(narrow)">
 						<p class="blockquote">
-							Grâce à la consommation réelle, 98% des clients sont satisfaits de leur facture.
+							Grâce à la consommation réelle, 96% des clients sont satisfaits de leur facture.
 						</p>
 					</div>
 				</div>
@@ -282,7 +282,7 @@ if (!empty($_POST)) {
 
 						<h3>Retrouvez les horaires<br/>pour faire des économies</h3>
 						<p>
-							Connaître les différentes plages horaires Heures Pleines et Heures Creuses
+							Les différentes plages horaires Heures Pleines et Heures Creuses
 						</p>
 					</div>
 
