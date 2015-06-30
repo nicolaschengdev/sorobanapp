@@ -307,6 +307,12 @@ if (!empty($_POST)) {
 
 				</div>
 			</div>
+
+			<div class="container">
+				<div style="text-align:center; color:#3cc0ba; font-size:0.85em; font-style:italic; margin-top:1em;">
+					L'application est un projet, les fonctionnalités présentées sont susceptibles d'évoluer
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -317,7 +323,7 @@ if (!empty($_POST)) {
                 <h2>Êtes-vous intéressé ?</h2>
 
                 <p>
-                    Votre avis est important,<br/><span class="highlight">participez</span> à l'élaboration du produit en répondant à quelques questions :
+                    Votre avis est important,<br/><span class="highlight">Participez</span> à l'élaboration du produit en répondant à quelques questions :
                 </p>
                 <div class="dark">
                 	<a class="button typeform-share link" href="https://teamwhyers.typeform.com/to/DCmdBe" data-mode="1" target="_blank">Donnez votre avis</a>
