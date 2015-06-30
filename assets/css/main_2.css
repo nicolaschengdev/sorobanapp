@@ -2228,12 +2228,24 @@ button.alt:hover,
     display: block;
     padding-left: 10px;
     content: "\201C";
-    font-size: 80px;
+    font-size: 50px;
     position: absolute;
-    left: -20px;
-    top: 10px;
+    left: -5px;
+    top: 30px;
     color: #fff;
 }
+
+/*
+#fourth.main .blockquote:after {
+    display: block;
+    content: "\201D";
+    font-size: 80px;
+    position: absolute;
+    right: 40px;
+    bottom: 10px;
+    color: #fff;
+}
+*/
 
 #fourth.main .blockquote cite {
     color: #fff;

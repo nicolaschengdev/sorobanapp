@@ -246,7 +246,8 @@ if (!empty($_POST)) {
 					</div>
 					<div class="6u 12u(narrow)">
 						<p class="blockquote">
-							Grâce à la consommation réelle, 96% des clients sont satisfaits de leur facture.
+							Grâce à la consommation réelle, 96% des clients sont satisfaits de leur facture. &rdquo;
+
 						</p>
 					</div>
 				</div>
@@ -316,7 +317,7 @@ if (!empty($_POST)) {
                 <h2>Êtes-vous intéressé ?</h2>
 
                 <p>
-                    Votre avis est important,<br/><span class="highlight">participez</span> à l'élobaration du produit en répondant à quelques questions :
+                    Votre avis est important,<br/><span class="highlight">participez</span> à l'élaboration du produit en répondant à quelques questions :
                 </p>
                 <div class="dark">
                 	<a class="button typeform-share link" href="https://teamwhyers.typeform.com/to/DCmdBe" data-mode="1" target="_blank">Donnez votre avis</a>
@@ -354,8 +355,8 @@ if (!empty($_POST)) {
 	<section id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="6u 12u(narrow) imprint"></div>
-				<div class="6u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste.</div>
+				<div class="6u 12u(narrow) imprint">Crédits photos: &copy; EDF - SASSO Christel</div>
+				<div class="6u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste</div>
 			</div>
 		</div>
 	</section>
