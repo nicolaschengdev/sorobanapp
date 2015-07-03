@@ -38,6 +38,15 @@ if (!empty($_POST)) {
 } else {
     $email = "";
 }
+
+$ref = "null";
+
+parse_str($_SERVER['QUERY_STRING'], $output);
+
+if (isset($output['ref'])) {
+	$ref = $output['ref'];
+}
+
 ?>
 
 <!DOCTYPE HTML>
@@ -326,7 +335,7 @@ if (!empty($_POST)) {
                     Votre avis est important,<br/><span class="highlight">Participez</span> à l'élaboration du produit en répondant à quelques questions :
                 </p>
                 <div class="dark">
-                	<a class="button typeform-share link" href="https://teamwhyers.typeform.com/to/DCmdBe" data-mode="1" target="_blank">Donnez votre avis</a>
+                	<a class="button typeform-share link" href="https://teamwhyers.typeform.com/to/DCmdBe?ref=<?php echo $ref; ?>" data-mode="1" target="_blank">Donnez votre avis</a>
 					<script>
 						(function(){
 						var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
