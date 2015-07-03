@@ -370,8 +370,9 @@ if (isset($output['ref'])) {
 	<section id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="6u 12u(narrow) imprint">Crédits photos: &copy; EDF - SASSO Christel</div>
-				<div class="6u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste</div>
+				<div class="8u 12u(narrow) imprint">
+					Crédits photos: &copy;EDF - SASSO CHRISTEL, &copy;EDF - MATHERON BALAY ERIC, &copy;EDF - PICARD FABRICE</div>
+				<div class="4u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste</div>
 			</div>
 		</div>
 	</section>
