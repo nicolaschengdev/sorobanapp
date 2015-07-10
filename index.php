@@ -378,7 +378,12 @@ if (isset($_GET['ref'])) {
 	<section id="footer">
 		<div class="container">
 			<div class="row">
+<<<<<<< HEAD
 				<div class="8u 12u(narrow) imprint">Crédits photos: &copy;EDF - SASSO CHRISTEL, &copy;EDF - MATHERON BALAY ERIC, &copy;EDF - PICARD FABRICE</div>
+=======
+				<div class="8u 12u(narrow) imprint">
+					Crédits photos: &copy;EDF - SASSO CHRISTEL, &copy;EDF - MATHERON BALAY ERIC, &copy;EDF - PICARD FABRICE</div>
+>>>>>>> daaf7dc5af94cf7343eb414d730162e0cb4a05cf
 				<div class="4u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste</div>
 			</div>
 		</div>
