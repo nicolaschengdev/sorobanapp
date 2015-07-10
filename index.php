@@ -410,7 +410,7 @@ if (isset($_GET['ref'])) {
 		); ?>;
 	</script>
 
-	<script src="assets/js/main_2.js"></script>
+	<script src="assets/js/main_4.js"></script>
 
 </body>
 </html>

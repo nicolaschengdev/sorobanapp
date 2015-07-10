@@ -115,9 +115,18 @@
 
 			var typeform_href = $('.typeform-share').attr('href');
 
+
+
+
 			if (typeform_href) {
-				typeform_href = typeform_href.replace('ref=null', 'ref=' + ref);
-				$('.typeform-share').attr('href', typeform_href);
+
+				var is_null = (typeform_href.indexOf('ref=null') > -1);
+
+				if (is_null) {
+					typeform_href = typeform_href.replace('ref=null', 'ref=' + ref);
+					$('.typeform-share').attr('href', typeform_href);
+				}
+				
 
 			}
 		}
