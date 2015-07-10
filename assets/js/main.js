@@ -94,6 +94,43 @@
 			}
 		}
 
+		/* quick fix */
+
+		var currentPageUrl = "";
+		if (typeof this.href === "undefined") {
+		    currentPageUrl = document.location.toString().toLowerCase();
+		} else {
+		    currentPageUrl = this.href.toString().toLowerCase();
+		}
+
+		console.log(currentPageUrl);
+		currentPageUrl = currentPageUrl.replace('#inscrivez-vous', '');
+		console.log(currentPageUrl);
+		currentPageUrl = currentPageUrl.replace('http://', '');
+		currentPageUrl = currentPageUrl.replace('ma-facture-au-plus-juste.fr', '');
+		currentPageUrl = currentPageUrl.replace('/?', '');
+		currentPageUrl = currentPageUrl.replace('?', '');
+		console.log(currentPageUrl);
+
+		currentPageUrl = 'ref=niko';
+
+		var ref = currentPageUrl.split('=');
+		if (ref && ref.length > 0) {
+			ref = ref[1];
+
+			var typeform_href = $('.typeform-share').attr('href');
+
+			console.log('typeform_href', typeform_href);
+
+			if (typeform_href) {
+				typeform_href = typeform_href.replace('ref=null', 'ref=' + ref);
+
+				console.log(typeform_href);
+
+				$('.typeform-share').attr('href', typeform_href);
+
+			}
+		}
 
 		// typeform
 	});

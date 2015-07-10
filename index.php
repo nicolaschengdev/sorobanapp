@@ -41,11 +41,19 @@ if (!empty($_POST)) {
 
 $ref = "null";
 
-parse_str($_SERVER['QUERY_STRING'], $output);
+$query_string = $_SERVER['QUERY_STRING'];
+
+parse_str($query_string, $output);
 
 if (isset($output['ref'])) {
 	$ref = $output['ref'];
 }
+
+/*
+if (isset($_GET['ref'])) {
+	$ref = $_GET['ref'];
+}
+*/
 
 ?>
 
@@ -328,7 +336,7 @@ if (isset($output['ref'])) {
 	<!-- Five -->
 	<section id="six" class="main">
 		<header>
-			<div class="container">
+			<div class="container" id="inscrivez-vous">
                 <h2>Êtes-vous intéressé ?</h2>
 
                 <p>
@@ -370,8 +378,8 @@ if (isset($output['ref'])) {
 	<section id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="6u 12u(narrow) imprint">Crédits photos: &copy; EDF - SASSO Christel</div>
-				<div class="6u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste</div>
+				<div class="8u 12u(narrow) imprint">Crédits photos: &copy;EDF - SASSO CHRISTEL, &copy;EDF - MATHERON BALAY ERIC, &copy;EDF - PICARD FABRICE</div>
+				<div class="4u 12u(narrow) copyright">2015 &copy; EDF - Ma facture au plus juste</div>
 			</div>
 		</div>
 	</section>
